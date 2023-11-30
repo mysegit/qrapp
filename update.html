@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Define the document type as HTML -->
+<html lang="en">
+<!-- Start of HTML document, with "en" set as the default language -->
+
+<head>
+	<!-- Start of the header section -->
+	<meta charset="UTF-8">
+	<!-- Set the character encoding to UTF-8 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Set the compatibility mode for Internet Explorer to the latest version -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+	<!-- Set the viewport for the page to the device's width and initial zoom level -->
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Set the title of the page to "Document" -->
+	<style>
+		h2 {
+			margin: 34px 0;
+			font-size: 40px;
+			font-weight: normal;
+			letter-spacing: -2px;
+		}
+
+		/* Define some styles for the elements with the "edit" and "delete" classes */
+		.edit,
+		.delete {
+			background-color: silver;
+			cursor: pointer;
+			color: white;
+			padding: 3px;
+			border-radius: 5px;
+			padding: 16px;
+			margin: 0 10px;
+			width: 63px;
+			border: 3px solid #eee;
+			border-radius: 34px;
+			font-size: 27px;
+			line-height: 21px;
+		}
+		.edit.success {
+			background-color: #3dcd58;
+		} 
+		.edit.fail {
+			background-color: #dc0a0a;
+		} 
+		#games-list {
+			display: flex;
+			flex-direction: column;
+			/* justify-content: center; */
+			align-items: center;
+			margin-top: 65px;
+		}
+
+		/* Define some styles for the element with the "update" class */
+		.update {
+			display: none;
+		}
+
+		.game-container {
+    width: 322px;
+    height: 59px;
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 19px 38px 0px rgba(0,0,0,0.3), 0px 15px 12px 0px rgba(0,0,0,0.22);
+    padding: 12px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+	}
+	.title {
+	font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+	}
+	</style>
+	<!-- End of the header section -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://cozmo.github.io/jsQR/jsQR.js"></script>
+	<script
+		src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Creating-QR-Codes-On-Your-Website-ClassyQR/js/jquery.classyqr.js"></script>
+</head>
+<!-- End of the header section -->
+
+<body>
+
+	<div class="logo-container">
+		<img src="logo.svg">
+	</div>
+	<h2>TAP your brain with <b>ETAP</b></h2>
+	<section id="new-scan">
+		<section id="qr-scan" class="hide">
+			<div id="loadingMessage">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+			<canvas id="canvas" hidden></canvas>
+		</section>
+		<br>
+		<br>
+		<br>
+		<br>
+		<button onclick="readQR();" id="update" class="button">SCAN</button>
+	</section>
+	<section id="show-all-data" class="hide">
+		<!-- End of the form element -->
+		<div id="games-list"></div>
+		<button onclick="readQR(true);" id="update" class="button">RE-SCAN</button>
+	</section>
+	<!-- End of the table element -->
+
+	<div id="qr-scan-error" class="hide">
+		<p>User not registered. Please ask the user to register</p>
+	</div>
+	<script src="src/index.js"></script>
+	<script src="src/json.js"></script>
+</body>
+
+</html>
