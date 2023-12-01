@@ -717,7 +717,7 @@ function loadTimer(){
     timer.addEventListener('targetAchieved', function (e) {
         el.innerHTML ='Finished!!';
         if(selectedQuestion<2){
-            el.innerHTML ='Game Over !!';
+            el.innerHTML ='Timed Out !!';
             gameOver = true ;
         }else{
             el.innerHTML ='Congratulations !!';
