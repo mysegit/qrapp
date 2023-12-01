@@ -16,7 +16,10 @@ async function createUser() {
 	}, 2000)
 }
 
-function readQR() {
+function readQR(rescan) {
+	if(!rescan) {
+		$(".loader").show();
+	}
 	$("#update").hide();
 	$("#qr-scan").show();
 	$("#new-scan").show();
@@ -71,7 +74,8 @@ function readQR() {
 				scanListener = 'unset';
 				$("#new-scan").hide();
 			} else {
-				window.cancelAnimationFrame(scanListener)
+				window.cancelAnimationFrame(scanListener);				
+				$(".loader").hide();
 			}
 		}
 		if (scanListener != 'unset') {

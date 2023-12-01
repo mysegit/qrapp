@@ -34,6 +34,7 @@ function createData(uniqueId) {
 }
 
 function readData(uniqueId) {
+  $(".loader").show();
   $("#qr-scan-error").hide();
   if (uniqueId) {
     // Use fetch to make a GET request to the API endpoint and parse the JSON response
@@ -43,6 +44,10 @@ function readData(uniqueId) {
         // Extract the todo data from the response
         showInUI(data.data, uniqueId);
       })
+      .catch(err => {
+        alert('ERROR IN READING! PLEASE RETRY');
+        $(".loader").hide();
+      });
   }
 }
 
@@ -88,6 +93,7 @@ function showInUI(data, uniqueId) {
     $("#update").show();
     $("#qr-scan-error").show();
   }
+  $(".loader").hide();
 }
 function delData(id, uid) {
   // Use fetch to make a GET request to the API endpoint to delete the todo item with the given id
@@ -101,6 +107,7 @@ function delData(id, uid) {
 }
 
 function updateData(id, uid, col, val) {
+  $(".loader").show();
   // send a fetch request to update the todo data
   fetch(api + `?update=true&id=${id}&uid=${uid}&col=${col}&data=${val}`)
     .then(res => res.json())
@@ -108,5 +115,10 @@ function updateData(id, uid, col, val) {
       // read the updated data
       console.log(data.data)
       showInUI(data.data, uid)
+      $(".loader").hide();
     })
+    .catch(err => {
+      alert('ERROR IN UPDATE! PLEASE RETRY');
+      $(".loader").hide();
+    });
 }
