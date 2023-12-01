@@ -60,23 +60,23 @@ function showInUI(data, uniqueId) {
     const html = `
     <div class="game-container"> 
       <div class="title">Tech Wizz</div>
-      <button class="edit  ${each[2] === "P" ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 3, 'P')">P</button>    
-      <button class="edit  ${each[2] === "F" ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 3, 'F')">F</button> 
+      <button class="edit  ${each[2] === 1 ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 3, 1)">P</button>    
+      <button class="edit  ${each[2] === 0 ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 3, 0)">F</button> 
     </div>
     <div  class="game-container">  
       <div class="title">Match N Time</div>
-      <button class="edit  ${each[3] === "P" ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 4, 'P')">P</button>    
-      <button class="edit  ${each[3] === "F" ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 4, 'F')">F</button>    
+      <button class="edit  ${each[3] === 1 ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 4, 1)">P</button>    
+      <button class="edit  ${each[3] === 0 ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 4, 0)">F</button>    
     </div>
     <div  class="game-container">
       <div class="title">Brain Teaser</div>
-      <button class="edit ${each[4] === "P" ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 5, 'P')">P</button>    
-      <button class="edit ${each[4] === "F" ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 5, 'F')">F</button>          
+      <button class="edit ${each[4] === 1 ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 5, 1)">P</button>    
+      <button class="edit ${each[4] === 0 ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 5, 0)">F</button>          
     </div>
     <div  class="game-container">
       <div class="title">Cups N Balls</div>
-      <button class="edit  ${each[5] === "P" ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 6, 'P')">P</button>    
-      <button class="edit  ${each[5] === "F" ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 6, 'F')">F</button>    
+      <button class="edit  ${each[5] === 1 ? 'success' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 6, 1)">P</button>    
+      <button class="edit  ${each[5] === 0 ? 'fail' : ''}" onclick="updateData(${each[0]}, ${each[1]}, 6, 0)">F</button>    
     </div>
     `;
 
