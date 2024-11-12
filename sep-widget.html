@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Widget Demo</title>
+  
+   <link rel="stylesheet" charset="utf-8" media="all" href="https://selectconfig-widget-sqe.schneider-electric.com/release-sqe3/wrapper/2.X/wrapper.css"/>
+    <script type="text/javascript" charset="utf-8" src="https://selectconfig-widget-sqe.schneider-electric.com/release-sqe3/wrapper/2.X/wrapper.js"></script>
+	
+	
+    <style>
+      html, body {
+        border: 0px solid transparent;
+        height: 100%;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+        width: 100%;
+      }
+  
+      .main {
+        display: flex;
+      }
+  
+      .main__widget-wrapper, .se-widget-wrapper {
+        display: flex;
+        flex: 1 1 auto;
+      }
+    </style>
+  </head>
+  
+  <body class="main">
+    <div id="widgetFrame" class="main__widget-wrapper" style="">
+	
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+		var dataset = {
+			"type": "hi",
+			"value": "SINGLE_ENTRY_POINT"
+		};
+
+		var language = 'EN';
+		var country = 'SCHINT';
+		var project = 'ANY';
+		var token = 'Bearer';
+		var widgetOptions = {		
+			'apiEndpoint': 'https://selectconfig-sqe.schneider-electric.com',
+			 'advancedConfiguration': {
+							'selectorVisibility': {
+							  'narrowSelectors': {
+								'mode': 'whitelist',//listed selectors will only be shown to the user
+								'selectors': [
+								  'Sedna Design & Elements'
+								]
+							  }
+							}
+						  }			
+		};
+		var wrapperInstance = seWidgetWrapper.startWidget(dataset, language, country, project, token, widgetOptions);
+	</script>
+  </body>
+</html>
